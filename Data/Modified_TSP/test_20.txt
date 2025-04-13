@@ -1,0 +1,26 @@
+###Test 20: Loopy Maze (7 nodes)
+#Description: Two interlocking cycles with the goal outside them. Tests loop handling in a compound structure (algorithm must navigate out of cycles 1-2-3 and 3-4-5 to reach goal 6).
+#Optimal Path: 1 → 3 → 5 → 6 (Total cost: 3)
+================================================================================
+Nodes:
+1: (0,0)
+2: (1,0)
+3: (0,1)
+4: (1,1)
+5: (0,2)
+6: (0,3)
+7: (2,2)
+Edges:
+(1,2): 1
+(1,3): 1 # Manually add
+(2,3): 1
+(3,1): 1
+(3,4): 1
+(3,5): 1 # Manually add
+(4,5): 1
+(5,3): 1
+(5,6): 1
+Origin:
+1
+Destinations:
+6

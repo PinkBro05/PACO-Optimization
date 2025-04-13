@@ -1,0 +1,18 @@
+###Test 16: Detour Required (5 nodes)
+#Description: Goal lies behind the start, requiring initial movement away from it. Tests algorithms taking necessary backtracks (Greedy may resist going opposite the goal direction).
+#Optimal Path: 1 → 2 → 3 (Total cost: 2)
+================================================================================
+Nodes:
+1: (0,0)
+2: (1,0)
+3: (2,0)
+4: (1,0)
+5: (2,2)
+Edges:
+(1,2): 1
+(2,3): 1
+(1,4): 1
+Origin:
+1
+Destinations:
+3

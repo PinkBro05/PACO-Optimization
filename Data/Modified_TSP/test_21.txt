@@ -1,0 +1,17 @@
+###Test 21: Free vs Toll Path (4 nodes)
+#Description: One path has zero-cost edges but more steps, the other is a direct toll. Tests algorithms in presence of zero-cost edges (BFS might choose the 1-step toll route of cost6 over the 2-step free+cheap route of cost5).
+#Optimal Path: 1 → 2 → 3 (Total cost: 5)
+================================================================================
+Nodes:
+1: (0,0)
+2: (1,0)
+3: (2,0)
+4: (3,3)
+Edges:
+(1,2): 0
+(2,3): 5
+(1,3): 6
+Origin:
+1
+Destinations:
+3

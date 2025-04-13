@@ -1,0 +1,32 @@
+###Test 25: Complex Weighted Network (7 nodes)
+#Description: Highly connected weighted graph with many possible routes. Tests global optimality: the algorithm must combine edges to find the minimum-cost path among a tangle of options (Greedy might get lured by locally cheap edges that lead to a costlier overall route).
+#Optimal Path: 1 → 3 → 4 (Total cost: 6)
+================================================================================
+Nodes:
+1: (0,0)
+2: (2,0)
+3: (1,1)
+4: (2,2)
+5: (1,2)
+6: (3,1)
+7: (4,4)
+Edges:
+(1,2): 4
+(1,3): 2
+(1,4): 8
+(1,5): 8
+(1,6): 15
+(2,3): 1
+(2,4): 5
+(2,5): 2
+(2,6): 9
+(3,4): 6
+(3,5): 7
+(3,6): 7
+(4,5): 3
+(4,6): 2
+(5,6): 4
+Origin:
+1
+Destinations:
+6; 7; 4

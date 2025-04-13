@@ -1,0 +1,21 @@
+###Test 14: Walled Garden (7 nodes)
+#Description: Origin is in a low-cost garden area enclosed by a high-cost barrier edge. Goal lies outside. Tests if algorithms venture through a costly exit or get stuck exploring cheap internal loops.
+#Optimal Path: 1 → 3 → 4 (Total cost: 6)
+================================================================================
+Nodes:
+1: (0,0)
+2: (1,0)
+3: (0,1)
+4: (1,2)
+5: (2,2)
+6: (2,0)
+7: (3,1)
+Edges:
+(1,2): 1
+(2,3): 1
+(1,3): 1
+(3,4): 5
+Origin:
+1
+Destinations:
+4

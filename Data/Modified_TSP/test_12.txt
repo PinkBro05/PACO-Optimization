@@ -1,0 +1,19 @@
+###Test 12: Dual Optimal Paths (5 nodes)
+#Description: Two distinct paths to the goal with equal total cost. Tests handling of multiple optimal solutions (algorithm should find one of them).
+#Optimal Path: 1 → 2 → 4 (Total cost: 2)
+================================================================================
+Nodes:
+1: (0,0)
+2: (1,0)
+3: (1,0)
+4: (0,1)
+5: (1,1)
+Edges:
+(1,2): 1
+(2,4): 1
+(1,3): 1
+(3,4): 1
+Origin:
+1
+Destinations:
+4

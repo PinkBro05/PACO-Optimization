@@ -1,0 +1,25 @@
+### Test 2: Dead End Traps (Modified,8 nodes)
+# Description: Two paths,one direct and one trap with high cost. Tests trap avoidance.
+# Optimal Path: 1 → 2 → 3 → 4 → 5 (Total cost: 4)
+================================================================================
+Nodes:
+1: (0,0)
+2: (0,0)
+3: (0,0)
+4: (0,0)
+5: (0,0)
+6: (0,0)
+7: (0,0)
+8: (0,0)
+Edges:
+(1,2): 1
+(2,3): 1
+(3,4): 1
+(4,5): 1
+(1,6): 5
+(6,7): 5
+(7,8): 5
+Origin:
+1
+Destinations:
+5; 8

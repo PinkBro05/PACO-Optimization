@@ -1,0 +1,17 @@
+###Test 6: Weighted Triangle (4 nodes)
+#Description: Direct vs indirect route to the same goal with different costs. Tests weighted pathfinding (Dijkstra/A* should prefer the cheaper two-step route, BFS might take the direct step).
+#Optimal Path: 1 → 2 → 3 (Total cost: 6)
+================================================================================
+Nodes:
+1: (0,0)
+2: (1,0)
+3: (2,0)
+4: (0,1)
+Edges:
+(1,3): 10
+(1,2): 3
+(2,3): 3
+Origin:
+1
+Destinations:
+3

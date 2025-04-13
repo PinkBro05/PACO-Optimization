@@ -1,0 +1,18 @@
+###Test 10: Goal Choice Challenge (5 nodes)
+#Description: Multiple possible goals. One is a high-cost direct route; another is lower-cost via an intermediate. Tests selecting the optimal goal among many.
+#Optimal Path: 1 → 5 → 3 (Total cost: 5)
+================================================================================
+Nodes:
+1: (0,0)
+2: (1,0)
+3: (2,0)
+5: (1,1)
+4: (0,2)
+Edges:
+(1,2): 10
+(1,5): 2
+(5,3): 3
+Origin:
+1
+Destinations:
+2; 3

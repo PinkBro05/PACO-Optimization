@@ -1,0 +1,40 @@
+###Test 23: Gridlock Maze (17 nodes)
+#Description: A 4x4 maze with one winding path to the goal and many dead ends forming loops. Tests thorough exploration (DFS might get trapped in cycles of dead ends, BFS systematically covers large areas, A* must navigate corridors).
+#Optimal Path: 1 → 2 → 3 → 7 → 11 → 12 → 16 (Total cost: 6)
+================================================================================
+Nodes:
+1: (0,0)
+2: (1,0)
+3: (2,0)
+4: (3,0)
+5: (0,1)
+6: (1,1)
+7: (2,1)
+8: (3,1)
+9: (0,2)
+10: (1,2)
+11: (2,2)
+12: (3,2)
+13: (0,3)
+14: (1,3)
+15: (2,3)
+16: (3,3)
+17: (4,4)
+Edges:
+(1,2): 1
+(2,3): 1
+(3,7): 1
+(7,11): 1
+(11,12): 1
+(12,16): 1
+(1,5): 1
+(5,9): 1
+(9,13): 1
+(5,6): 1
+(6,10): 1
+(10,14): 1
+(13,14): 1
+Origin:
+1
+Destinations:
+16

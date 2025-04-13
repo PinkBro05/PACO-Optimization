@@ -1,0 +1,17 @@
+###Test 17: Nearest vs Cheapest Goal (4 nodes)
+#Description: Physically closest goal has a very high cost edge; a farther goal is cheaper via multiple steps. Tests choosing the truly lowest-cost goal over the nearest one (Greedy may go to 2 because it’s closer, but 3 via 4 is cheaper).
+#Optimal Path: 1 → 4 → 3 (Total cost: 2)
+================================================================================
+Nodes:
+1: (0,0)
+2: (1,0)
+3: (2,0)
+4: (1,0)
+Edges:
+(1,2): 50
+(1,4): 1
+(4,3): 1
+Origin:
+1
+Destinations:
+2; 3

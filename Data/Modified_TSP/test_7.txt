@@ -1,0 +1,19 @@
+###Test 7: Blocked Shortcut (5 nodes)
+#Description: Direct path is blocked, requiring a detour. Tests heuristic misguidance (greedy may go toward the barrier and hit a dead end).
+#Optimal Path: 1 → 4 → 3 (Total cost: 4)
+# 5 is the invalid destination
+================================================================================
+Nodes:
+1: (0,0)
+2: (1,0)
+3: (2,0)
+4: (1,1)
+5: (2,1)
+Edges:
+(1,2): 1
+(1,4): 2
+(4,3): 2
+Origin:
+1
+Destinations:
+3

@@ -1,0 +1,13 @@
+###Test 3: Trivial Start (2 nodes)
+#Description: Origin is also a destination. Tests immediate goal recognition.
+#Optimal Path: 1 (Total cost: 0)
+================================================================================
+Nodes:
+1: (0,0)
+2: (5,5)
+Edges:
+(1,2): 5
+Origin:
+1
+Destinations:
+1; 2
