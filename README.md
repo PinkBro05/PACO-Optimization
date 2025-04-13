@@ -1,4 +1,4 @@
-## 
+## Blog: [PACO]{https://www.pinknn.com/posts/paco/}
 
 ## Table of Contents
 - [Search Algorithms](#search-algorithms)
