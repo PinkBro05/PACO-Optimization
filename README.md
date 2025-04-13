@@ -1,10 +1,4 @@
-# COS30019: Introduction to Artificial Intelligence
-
-Presented by Phong Tran, Hong Anh Nguyen, and James Luong
-
----
-
-This repository contains the implementation of various search algorithms for path finding problems, created collaboratively by our team.
+## 
 
 ## Table of Contents
 - [Search Algorithms](#search-algorithms)
@@ -21,34 +15,11 @@ This repository contains the implementation of various search algorithms for pat
 
 ## Search Algorithms
 
-### Uninformed Search Algorithms
-1. **BFS (Breadth-First Search)** - Implemented by Phong
-   - Complete, optimal for unweighted graphs
-   - Uses a queue data structure
-
-2. **DFS (Depth-First Search)** - Implemented by Phong
-   - Complete but not optimal
-   - Uses a stack data structure
-
-### Informed Search Algorithms
-1. **GBFS (Greedy Best-First Search)** - Implemented by Tuan
-   - Uses heuristics to guide search
-   - Fast but not guaranteed to find optimal paths
-
-2. **AS (A\* Search)** - Implemented by Tuan
-   - Combines cost-so-far and heuristics
-   - Complete and optimal with admissible heuristics
-
-### Custom Search Algorithms
-1. **CUS1 (Dijkstra's Algorithm)** - Implemented by Phong
-   - Complete and optimal for non-negative edge weights
-   - Prioritizes nodes by cumulative path cost
-
-2. **CUS2 (Ant Colony Optimization)** - Implemented by Pink
+1. **CUS2 (Ant Colony Optimization)** - Implemented by Pink
    - Metaheuristic inspired by ant foraging behavior
    - Uses pheromone trails and heuristic information
 
-3. **Floyd-Warshall Algorithm** - Implemented by Pink
+2. **Floyd-Warshall Algorithm** - Implemented by Pink
    - All-pairs shortest path algorithm
    - Precomputes optimal paths between all node pairs
    - Used to enhance ACO performance by providing virtual edges
@@ -56,24 +27,16 @@ This repository contains the implementation of various search algorithms for pat
 ## Project Structure
 
 ```
-COS30019_IntroAI/
+PACO-Optimization/
 ├── search.py                # Main entry point for all algorithms
 ├── Data/                    # Graph data files
 │   ├── Modified_TSP/        # Contains 28 test cases for algorithm testing
 │   └── TSP/                 # Original TSP datasets
 ├── data_reader/            # Graph parsing utilities
 │   └── parser.py           # File parser for graphs
-├── Uninformed_Search/      # BFS and DFS implementations
-│   ├── bfs.py
-│   └── dfs.py
-├── Informed_Search/        # A* and GBFS implementations
-│   ├── A_Star.py
-│   └── GBFS.py
-├── Custom_Search/          # Custom search algorithms
+├── ACO/          
 │   ├── aco_search.py       # ACO main script
 │   ├── aco_tuning.py       # ACO hyper-parameter tuning
-│   ├── Dijkstras_Algorithm/
-│   │   └── dijk.py         # Dijkstra's algorithm implementation
 │   └── aco_routing/        # ACO implementation components
 │       ├── aco.py          # Main ACO algorithm
 │       ├── ant.py          # Ant agent implementation
@@ -112,13 +75,8 @@ python search.py <algorithm> <data_file>
 python search.py <data_file> <algorithm>
 ```
 
-Where `<algorithm>` is one of:
-- `BFS` - Breadth-First Search
-- `DFS` - Depth-First Search
-- `GBFS` - Greedy Best-First Search
-- `AS` - A* Search (A-Star)
-- `CUS1` - Dijkstra's Algorithm
-- `CUS2` - Ant Colony Optimization
+Where `<algorithm>` is :
+- `ACO` - Ant Colony Optimization
 
 And `<data_file>` is the path to a graph file.
 
@@ -126,10 +84,10 @@ And `<data_file>` is the path to a graph file.
 
 ```bash
 # Run ACO on a test file
-python search.py CUS2 Data/Modified_TSP/test_0.txt
+python search.py ACO Data/Modified_TSP/test_0.txt
 
-# Run BFS on a test file
-python search.py Data/Modified_TSP/test_5.txt BFS
+# Run ACO on a test file
+python search.py Data/Modified_TSP/test_5.txt ACO
 ```
 
 ### Running Tests
@@ -137,7 +95,6 @@ python search.py Data/Modified_TSP/test_5.txt BFS
 The project includes a testing framework to evaluate all algorithms on multiple test cases. To run tests:
 
 ```bash
-# Run tests on all algorithms (BFS, DFS, GBFS, AS, CUS1, CUS2)
 python Tests/run_test.py
 ```
 
@@ -239,8 +196,3 @@ aco = ACO(
     logging = 10 # Change to None to disable logging on terminal
 )
 ```
-## Contributors
-
-- **Phong Tran**: BFS, DFS, and Dijkstra's Algorithm
-- **Hong Anh Nguyen**: Ant Colony Optimization (ACO) + Floyd Warshall, Testing Framework
-- **James Luong**: A* Search, Greedy Best-First Search

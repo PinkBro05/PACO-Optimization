@@ -1,0 +1,5 @@
+ACO Results Summary
+Total tests: 30
+Successful tests: 30 (100.0%)
+Average execution time: 6.120 seconds
+Average path cost: 11.367

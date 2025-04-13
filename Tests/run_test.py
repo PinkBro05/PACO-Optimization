@@ -20,28 +20,14 @@ def run_test(test_file_path, algorithm):
     
     Args:
         test_file_path (str): Path to the test file
-        algorithm (str): Algorithm to use (BFS, DFS, ASTAR, GBFS, CUS1, CUS2)
-    
+        algorithm (str): Algorithm to run 
     Returns:
         dict: Results of the test run
     """
     start_time = time.time()
     
-    # Determine which script to run based on the algorithm
-    if algorithm == "BFS":
-        cmd = [sys.executable, str(project_root / "search.py"), test_file_path, "BFS"]
-    elif algorithm == "DFS":
-        cmd = [sys.executable, str(project_root / "search.py"), test_file_path, "DFS"]
-    elif algorithm == "ASTAR":
-        cmd = [sys.executable, str(project_root / "search.py"), test_file_path, "ASTAR"]
-    elif algorithm == "GBFS":
-        cmd = [sys.executable, str(project_root / "search.py"), test_file_path, "GBFS"]
-    elif algorithm == "CUS1":
-        # Assuming CUS1 is Dijkstra's algorithm
-        cmd = [sys.executable, str(project_root / "search.py"), test_file_path, "CUS1"]
-    elif algorithm == "CUS2":
-        # CUS2 is ACO
-        cmd = [sys.executable, str(project_root / "search.py"), test_file_path, "CUS2"]
+    if algorithm == "ACO":
+        cmd = [sys.executable, str(project_root / "search.py"), test_file_path, "ACO"]
     else:
         return {
             "success": False,
@@ -53,7 +39,7 @@ def run_test(test_file_path, algorithm):
         result = subprocess.run(cmd, 
                                capture_output=True, 
                                text=True, 
-                               timeout=300) # 60 second timeout
+                               timeout=300) # 300 second timeout
         
         execution_time = time.time() - start_time
         
@@ -77,7 +63,23 @@ def run_test(test_file_path, algorithm):
         algorithm_info = output_lines[0]
         goal_info = output_lines[1]
         path = output_lines[2]
-        cost = output_lines[3] 
+        
+        # Extract cost from the path if it's not provided separately
+        cost = "N/A"  # Default if cost can't be extracted
+        
+        # Check if there's a fourth line with cost
+        if len(output_lines) >= 4 and output_lines[3].strip():
+            cost = output_lines[3]
+        else:
+            # Try to extract cost from the path - look for a pattern like [...] (cost: X.XX)
+            # or extract from goal_info if needed
+            # This is a fallback in case the cost format changes
+            try:
+                # If path shows no path found, set cost to 0
+                if "No path found" in path or "Destination already reached" in path:
+                    cost = "0.0"
+            except:
+                pass
         
         # Try to extract test number from file name
         test_num = "Unknown"
@@ -98,8 +100,8 @@ def run_test(test_file_path, algorithm):
     except subprocess.TimeoutExpired:
         return {
             "success": False,
-            "error": "Test timed out after 60 seconds",
-            "execution_time": 60
+            "error": "Test timed out after 300 seconds",
+            "execution_time": 300
         }
     except Exception as e:
         return {
@@ -138,7 +140,7 @@ def get_test_info_from_parser(test_file_path):
 
 def main():
     # Available algorithms to test
-    algorithms = ["BFS", "DFS", "ASTAR", "GBFS", "CUS1", "CUS2"]
+    algorithms = ["ACO"]
     
     # Create test results directory if it doesn't exist
     results_dir = project_root / "Tests" / "Results"
